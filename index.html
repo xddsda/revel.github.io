@@ -1,64 +1,441 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en, eu">
+
+<link rel="icon" type="image/png" href="./img/revel.png">
+	
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estamos en Mantenimiento</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            text-align: center;
-        }
-        h1 {
-            font-size: 3em;
-            color: #333;
-            margin: 0;
-        }
-        #timer {
-            font-size: 2em;
-            color: #555;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#317EFB" >
+  <meta name="description" content="template.">
+  <title>Revel bot</title>
+  <link rel="apple-touch-icon" href="/example.png">
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/hala.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
+  <!-- Start Header -->
+  <div class="header" id="#header">
     <div class="container">
-        <h1>ESTAMOS EN MANTENIMIENTO</h1>
-        <div id="timer"></div>
+      <a href="#" class="logo">ʀᴇᴠᴇʟ ꜱᴇʀᴠɪᴄᴇꜱ</a>
+      <ul class="mainmenu">
+        <li><a href="#features">ꜰᴇᴀᴜᴛᴇʀꜱ</a></li>
+        <li><a href="#team">ᴛᴇᴀᴍ ᴍᴇᴍʙᴇʀꜱ</a></li>
+        <li><a href="#work-steps">ᴜᴘᴅᴀᴛᴇꜱ</a></li>
+        <li><a href="#">ᴍᴏʀᴇ ɪɴꜰᴏ</a>
+          <!-- Start Megamenu -->
+          <div class="megamenu">
+            <div class="image">
+              <img src="imgs/revel.png" alt="">
+            </div>
+            <ul class="links">
+              <li>
+                <a href="#testimonials"><i class="far fa-comments fa-fw"></i> ᴘᴀʀᴛɴᴇʀꜱ</a>
+              </li>
+              <li>
+                <a href="#team"><i class="far fa-user fa-fw"></i> ᴛᴇᴀᴍ ᴍᴇᴍʙᴇʀꜱ</a>
+              <li>
+                <a href="#our-skills"><i class="far fa-check-circle fa-fw"></i> ᴏᴜʀ ꜱᴋɪʟʟꜱ</a>
+              </li>
+              <li>
+                <a href="#work-steps"><i class="far fa-clipboard fa-fw"></i> ɴᴇᴡ ᴜᴘᴅᴀᴛᴇꜱ</a>
+              </li>
+            </ul>
+            <ul class="links">
+              <li>
+                <a href="#events"><i class="far fa-calendar-alt fa-fw"></i> ᴇᴠᴇɴᴛꜱ (ꜱᴏᴏɴ)</a>
+              </li>
+              <li>
+                <a href="#pricing"><i class="fas fa-server fa-fw"></i> ʀᴇᴠᴇʟ ᴘʀᴇᴍɪᴜᴍ (ꜱᴏᴏɴ)</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- End Megamenu -->
+        </li>
+      </ul>
     </div>
+  </div>
+  <!-- End Header -->
+ 
+<!-- Start Landing -->
+<div class="landing">
+  <div class="container">
+    <div class="text">
+      <h1>ʀᴇᴠᴇʟ<h1>
+      <p>Es un bot multipropósito que sirve para proteger y entretener tu servidor con más de 50 comandos</p>
+      <!-- Botón INVITE -->
+      <a href="https://discord.com/application-directory/1243644102302630010" class="invite-btn">INVITE</a>
+    </div>
+    <div class="image">
+      <img src="imgs/landing-image.png" alt="">
+    </div>
+  </div>
+  <a href="#features" class="go-down">
+    <i class="fas fa-angle-double-down fa-2x"></i>
+  </a>
+</div>
+<!-- End Landing -->
 
-    <script>
-        // Configurar la fecha de fin del temporizador (7 días a partir de ahora)
-        const endDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
+<!-- Estilos para el botón -->
+<style>
+  .invite-btn {
+    display: inline-block;
+    padding: 15px 30px; /* Aumentar el tamaño del botón */
+    background-color: #007bff; /* Color azul */
+    color: white;
+    text-decoration: none;
+    border-radius: 25px; /* Esquinas redondeadas */
+    font-weight: bold;
+    font-size: 18px; /* Aumentar el tamaño de la fuente */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    transition: background-color 0.3s ease;
+    margin-top: 15px; /* Espacio superior para separarlo del texto */
+  }
 
-        // Actualizar el temporizador cada segundo
-        const timer = setInterval(function() {
-            const now = new Date().getTime();
-            const timeRemaining = endDate - now;
+  .invite-btn:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+  }
+</style>
 
-            // Calcular días, horas, minutos y segundos restantes
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+  
+  <!-- Start Features -->
+  <div class="features" id="features">
+    <h2 class="main-title">Features</h2>
+    <div class="container">
+      <!-- BOX 1 -->
+      <div class="box quality">
+        <div class="img-hold">
+          <img src="imgs/features-01.png" alt="">
+        </div>
+        <h2>ꜱᴇᴄᴜʀɪᴛʏ</h2>
+        <p>ᴡᴇ ʜᴀᴠᴇ ᴏɴᴇ ᴏꜰ ᴛʜᴇ ʙᴇꜱᴛ ꜱᴇᴄᴜʀɪᴛʏꜱ ᴛᴏ ᴘʀᴇᴠᴇɴᴛ ʀᴀɪᴅꜱ ᴏɴ ᴅɪꜱᴄᴏʀᴅ.</p>
+        <a href="https://ibb.co/dMDJ4d9" target="_blank">ALL CMDS</a>
+      </div>
+      <!-- BOX 2 -->
+      <div class="box time">
+        <div class="img-hold">
+          <img src="imgs/features-02.jpg" alt="">
+        </div>
+        <h2>General CMD</h2>
+        <p>We have a lot of general commands for everyone to try!</p>
+        <a href="https://ibb.co/n6WfS6M" target="_blank">ALL CMDS</a>
+      </div>
+      <!-- BOX 3 -->
+      <div class="box passion">
+        <div class="img-hold">
+          <img src="imgs/features-03.jpg" alt="">
+        </div>
+        <h2>Staff Services</h2>
+        <p>Our staff services are fast an 24/7 you can ask questions or report bugs on discord!</p>
+        <a href="https://discord.gg/h6SqBTpMuh">Discord</a>
+      </div>
+    </div>
+  </div>
+  <!-- End Features -->
+  <!-- Start Testimonials -->
+  
+  
+  
+  <!-- End Testimonials -->
+  <!-- Start Team Members  -->
+  <div class="team" id="team">
+    <h3 class="main-title">Team Members</h3>
+    <div class="container">
+      <!-- BOX 1 -->
+      <div class="box">
+        <div class="data">
+          <img src="imgs/team-01.png" alt="">
+          <div class="social">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="info">
+          <h3>Tightt (Manager)</h3>
+          <p>Hi! im Tightt i manage the web and i add new updates to
+		  The Bot!
+		  </p>
+        </div>
+      </div>
+      <!-- BOX 2 -->
+      <div class="box">
+        <div class="data">
+          <img src="imgs/team-02.png" alt="">
+          <div class="social">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="info">
+          <h3>Doxiado (Owner)</h3>
+          <p>Im Doxiado the main owner of revel</p>
+        </div>
+      </div>
+      <!-- BOX 3 -->
+      <div class="box">
+        <div class="data">
+          <img src="imgs/team-03.png" alt="">
+          <div class="social">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="info">
+          <h3>Nova (Dev)</h3>
+          <p>Hi, im the developer </p>
+        </div>
+      </div>
+      <!-- BOX 4 -->
+      <div class="box">
+        <div class="data">
+          <img src="imgs/notdraco.png" alt="">
+          <div class="social">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="info">
+          <h3>notdraco47 (STAFF)</h3>
+          <p>Hi i am a Staff i help people and respond to tickets  </p>
+        </div>
+      </div>
+      <!-- BOX 5 -->
+      <div class="box">
+        <div class="data">
+          <img src="imgs/isak.png" alt="">
+          <div class="social">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="info">
+          <h3>isaacx5757 (STAFF)</h3>
+          <p>Hi i am a Staff i help people and respond to tickets</p>
+        </div>
+      </div>
+      <!-- BOX 6 -->
+      <div class="box">
+        <div class="data">
+          <img src="imgs/dm.png" alt="">
+          <div class="social">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="info">
+          <h3>.tyoudm (Dev)</h3>
+          <p>Hi i am a Developer and im the main owner of @Tumb </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spikes"></div>
+  <!-- End Team Members -->
 
-            // Mostrar el resultado en el elemento con id="timer"
-            document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-            // Si el temporizador llega a cero
-            if (timeRemaining < 0) {
-                clearInterval(timer);
-                document.getElementById("timer").innerHTML = "¡El mantenimiento ha terminado!";
-            }
-        }, 1000);
-    </script>
+  <!-- Start Our Works -->
+  <div class="work-steps" id="work-steps">
+    <h3 class="main-title">Recent Updates</h3>
+    <div class="container">
+      <img src="imgs/work-steps.png" alt="" class="image">
+      <div class="info">
+        <!-- BOX 1 -->
+        <div class="box">
+          <img src="imgs/work-steps-1.png" alt="">
+          <div class="text">
+            <h3>New Commands</h3>
+            <p>[+] botinfo cmd</p>
+              </p>[+] boostbadges cmd</p>
+              </p> [+] legacybadges cmd </p>
+          </div>
+        </div>
+        <!-- BOX 2 -->
+        <div class="box">
+          <img src="imgs/work-steps-2.png" alt="">
+          <div class="text">
+            <h3>Bugs Fix</h3>
+            <p>[%] We fixed some issues in @revel 
+             
+             </p>
+          </div>
+        </div>
+        <!-- BOX 3 -->
+        <div class="box">
+          <img src="imgs/work-steps-3.png" alt="">
+          <div class="text">
+            <h3>Security</h3>
+            <p> [+] We added a better Security
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Our Works -->
+ 
+  <!--PRICING PLANS -->
+  
+  <!--PRICING PLANS -->
+ 
+  <!-- Start Stats -->
+  <div class="stats" id="stats">
+    <h2>ʀᴇᴠᴇʟ ꜱᴛᴀᴅɪꜱᴛɪᴄꜱ</h2>
+    <div class="container">
+      <!-- BOX 1 -->
+      <div class="box">
+        <i class="far fa-user fa-2x fa-fw"></i>
+        <span class="number">1500</span>
+        <span class="text">ᴍᴇᴍʙᴇʀꜱ</span>
+      </div>
+      <!-- BOX 2 -->
+      <div class="box">
+        <i class="fas fa-code fa-2x fa-fw"></i>
+        <span class="number">v0.54</span>
+        <span class="text">ᴏɴʟɪɴᴇ ✔</span>
+      </div>
+      <!-- BOX 3-->
+      <div class="box">
+        <i class="fas fa-globe-asia fa-2x fa-fw"></i>
+        <span class="number">+50</span>
+        <span class="text">ɢᴜɪʟᴅꜱ!</span>
+      </div>
+      <!-- BOX 4 -->
+      <div class="box">
+        <i class="far fa-money-bill-alt fa-2x fa-fw"></i>
+        <span class="number">0%</span>
+        <span class="text">Money Goal</span>
+      </div>
+
+    </div>
+  </div>
+  <div class="center">
+
+  </div>
+  <!-- End Stats -->
+  <!-- Start Footer -->
+  <div class="footer">
+    <div class="container">
+      <!-- BOX 1 -->
+      <div class="box">
+        <h3>ʀᴇᴠᴇʟ</h3>
+        <ul class="social">
+          <li><a href="#" class="facebook">
+              <i class="fab fa-facebook-f"></i>
+          <li><a href="#" class="twitter">
+              <i class="fab fa-twitter"></i>
+          <li><a href="#" class="youtube">
+              <i class="fab fa-youtube"></i>
+          </a>
+        </ul>
+        <p class="text">Revel the best bot of discord MIT LICENSE ©
+        </p>
+      </div>
+      <!-- BOX 2 -->
+      <div class="box">
+        <ul class="links">
+          <li><a href="#">Feauters</a> </li>
+          <li><a href="#">Team Members</a></li>
+          <li><a href="#">Our Skills</a></li>
+          <li><a href="#">Updates</a></li>
+          <li><a href="#">Revel Stadistics</a></li>
+        </ul>
+      </div>
+      <!-- BOX 3 -->
+      <div class="box">
+        <!-- LINE lucation -->
+        <div class="line">
+          <i class="fas fa-map-marker-alt fa-fw"></i>
+          <div class="info">Im in your house</div>
+        </div>
+        <!-- LINE Hours -->
+        <div class="line">
+          <i class="far fa-clock fa-fw"></i>
+          <div class="info">The bot is Online Now!</div>
+        </div>
+        <!-- LINE Mobile -->
+        <div class="line">
+          <i class="fas fa-phone-volume fa-fw"></i>
+          <div class="info">
+            <span>66666666666</span>
+            <span>911</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">Made By <i class=" fas fa-user"> </i> ɪʙᴍꜰ ꜱᴛᴜᴅɪᴏꜱ ©</p> 
+  </div>
+  <!-- End Footer -->
+
 </body>
+
 </html>
